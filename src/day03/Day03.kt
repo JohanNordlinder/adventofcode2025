@@ -33,12 +33,12 @@ fun main() {
             return batteries.max().toLong()
         }
 
-        val possibleNumbers = batteries.take(batteries.size - digitsLeftToFind + 1)
-        val max = possibleNumbers.max()
-        val indexOfMax = possibleNumbers.indexOf(max)
-        val nextMax =
-            findBiggestPossibleNumber(batteries.subList(indexOfMax + 1, batteries.size), digitsLeftToFind - 1)
-        return "$max$nextMax".toLong()//.also { println(it) }
+        val possibleDigits = batteries.take(batteries.size - digitsLeftToFind + 1)
+        val maxDigit = possibleDigits.max()
+        val indexOfMaxDigit = possibleDigits.indexOf(maxDigit)
+        val nextDigit =
+            findBiggestPossibleNumber(batteries.subList(indexOfMaxDigit + 1, batteries.size), digitsLeftToFind - 1)
+        return "$maxDigit$nextDigit".toLong()//.also { println(it) }
     }
 
     fun part2(input: List<String>): Long {
